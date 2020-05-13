@@ -1,3 +1,11 @@
+# Time syncing issues
+
+In case hosts sleeps, VM will possibly be out of snyc. Login via SSH and exec the following:
+
+```shell
+sudo service ntp stop && sudo ntpd -gq && sudo service ntp start
+```
+
 # VVV ( Varying Vagrant Vagrants )
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/206b06167aaf48aab24422cd417e8afa)](https://www.codacy.com/gh/Varying-Vagrant-Vagrants/VVV?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Varying-Vagrant-Vagrants/VVV&amp;utm_campaign=Badge_Grade)
