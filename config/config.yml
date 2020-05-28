@@ -36,6 +36,39 @@ sites:
         WP_DEBUG_LOG: true
         SCRIPT_DEBUG: true
         WP_DISABLE_FATAL_ERROR_HANDLER: true # To disable in WP 5.2 the FER mode
+  demo:
+    skip_provisioning: false
+    description: "Demo dev environment"
+    repo: https://github.com/Varying-Vagrant-Vagrants/custom-site-template.git
+    hosts:
+      - demo.wordpress.test
+    custom:
+      delete_default_plugins: true
+      install_plugins:
+        - woocommerce
+        - woocommerce-germanized
+      install_themes:
+        - astra
+      wpconfig_constants:
+        WP_DEBUG: true
+        WP_DEBUG_LOG: true
+        SCRIPT_DEBUG: true
+        WP_DISABLE_FATAL_ERROR_HANDLER: true # To disable in WP 5.2 the FER mode
+  vendidero:
+    skip_provisioning: false
+    description: "Vendidero dev environment"
+    repo: https://github.com/Varying-Vagrant-Vagrants/custom-site-template.git
+    hosts:
+      - vendidero.wordpress.test
+    custom:
+      delete_default_plugins: true
+      install_plugins:
+        - woocommerce
+      wpconfig_constants:
+        WP_DEBUG: true
+        WP_DEBUG_LOG: true
+        SCRIPT_DEBUG: true
+        WP_DISABLE_FATAL_ERROR_HANDLER: true # To disable in WP 5.2 the FER mode
 
   # The following commented out site configuration will create a standard WordPress
   # site in www/example-site/ available at http://my-example-site.test.
