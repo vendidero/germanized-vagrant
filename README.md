@@ -6,6 +6,31 @@ In case hosts sleeps, VM will possibly be out of snyc. Login via SSH and exec th
 sudo service ntp stop && sudo ntpd -gq && sudo service ntp start
 ```
 
+# Sync MySQL table
+
+To import MySQL data, ssh into vagrant and import data:
+
+```shell
+ssh vagrant
+cd /srv/www/vendidero
+mysql -u root -p vendidero < dump.sql
+```
+
+After that use WP CLI to search-replace e.g.:
+```shell
+wp search-replace 'domain.de' 'domain.wordpress.test' wp_posts
+```
+
+# Use ElasticSearch
+
+We are currently using this repo to enable ES support: https://github.com/mmcachran/elasticsearch-vagrant
+Now add 
+
+```php
+define( 'EP_HOST', 'http://10.0.0.11:9200' );
+```
+to wp-config.php to enable a connection.
+
 # VVV ( Varying Vagrant Vagrants )
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/206b06167aaf48aab24422cd417e8afa)](https://www.codacy.com/gh/Varying-Vagrant-Vagrants/VVV?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Varying-Vagrant-Vagrants/VVV&amp;utm_campaign=Badge_Grade)

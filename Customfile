@@ -1,8 +1,10 @@
 ##Plugins
 config.vm.synced_folder "/Users/dennis/Sites/wordpress-dev/plugins/", "/srv/www/germanized/public_html/wp-content/plugins", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+config.vm.synced_folder "/Users/dennis/Sites/wordpress-dev/plugins/", "/srv/www/vendidero/public_html/wp-content/plugins", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
  
 ##Themes
 config.vm.synced_folder "/Users/dennis/Sites/wordpress-dev/themes/", "/srv/www/germanized/public_html/wp-content/themes", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+config.vm.synced_folder "/Users/dennis/Sites/wordpress-dev/themes/", "/srv/www/vendidero/public_html/wp-content/themes", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 
 config.vm.provider 'virtualbox' do |vb|
    vb.customize [ "guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 1000 ]
