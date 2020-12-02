@@ -1,13 +1,17 @@
 ##Plugins
 config.vm.synced_folder "/Users/dennis/Sites/wordpress-dev/plugins/", "/srv/www/germanized/public_html/wp-content/plugins", nfs: true
 config.vm.synced_folder "/Users/dennis/Sites/wordpress-dev/plugins/", "/srv/www/vendidero/public_html/wp-content/plugins", nfs: true
+config.vm.synced_folder "/Users/dennis/Sites/wordpress-dev/plugins/", "/srv/www/accounting/public_html/wp-content/plugins", nfs: true
  
 ##Themes
 config.vm.synced_folder "/Users/dennis/Sites/wordpress-dev/themes/", "/srv/www/germanized/public_html/wp-content/themes", nfs: true
 config.vm.synced_folder "/Users/dennis/Sites/wordpress-dev/themes/", "/srv/www/vendidero/public_html/wp-content/themes", nfs: true
+config.vm.synced_folder "/Users/dennis/Sites/wordpress-dev/themes/", "/srv/www/accounting/public_html/wp-content/themes", nfs: true
 
 config.vm.synced_folder "www/", "/srv/www", nfs: true
 
 config.vm.provider 'virtualbox' do |vb|
    vb.customize [ "guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 1000 ]
 end
+
+$enable_serial_logging = false
